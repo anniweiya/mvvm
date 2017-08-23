@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-demo</title>
+</head>
+<body>
+<div id="test">
+    <input v-model="helloworld" title="">
+    <input v-model="hello" title="">
+    <span>{{test}}</span>
+    <p v-html="child.test"></p>
+    <button v-on:click="change">点击</button>
+</div>
+<script src="./mvvm.js"></script>
+<script type="text/javascript">
+    let vm = new MVVM({
+        el: "#test",
+        data: {
+            helloworld: "helloworld",
+            hello: "hello",
+            test: "长长的test........",
+            child: {
+                test: "试试看"
+            }
+        },
+        methods: {
+            change: function () {
+                this.helloworld = "change hello world";
+            }
+        }
+    });
+</script>
+</body>
+</html>
